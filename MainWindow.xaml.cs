@@ -23,6 +23,7 @@ namespace Cryptocurrencies
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new ApplicationViewModel();
         }
     }
 }
