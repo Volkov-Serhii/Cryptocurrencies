@@ -6,37 +6,6 @@
         xmlns:local="clr-namespace:Cryptocurrencies"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="0.8*" />
-        </Grid.ColumnDefinitions>
-
-        <ListBox Grid.Column="0" ItemsSource="{Binding Cryptocurrencies.assets}"
-                 SelectedItem="{Binding SelectedСryptocurrency}">
-            <ListBox.ItemTemplate>
-                <DataTemplate >
-                    <StackPanel Margin="5">
-                        <TextBlock FontSize="18" Text="{Binding Path=asset_id}" />
-                        <TextBlock Text="{Binding Path=name}" />
-                        <TextBlock Text="{Binding Path=price}" />
-                    </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-        </ListBox>
-
-        <StackPanel Grid.Column="1" DataContext="{Binding Сryptocurrency}">
-            <TextBlock Text="Выбранный элемент"  />
-            <TextBlock Text="ID" />
-            <TextBox  Text="{Binding Path=asset.asset_id}" />
-            <TextBlock Text="Name" />
-            <TextBox DataContext="{Binding Path=asset}" Text="{Binding name}" />
-            <TextBlock Text="Price" />
-            <TextBox DataContext="{Binding Path=asset}" Text="{Binding price}" />
-
-            <TextBlock FontSize="18" DataContext="{Binding Path=asset}" Text="{Binding Path=asset_id}" />
-            <TextBlock DataContext="{Binding Path=asset}" Text="{Binding Path=name}" />
-            <TextBlock DataContext="{Binding Path=asset}" Text="{Binding Path=price}" />
-        </StackPanel>
-    </Grid>
+    <Frame Name="MainFrame" Background="White" NavigationUIVisibility="Hidden"/>
+    
 </Window>

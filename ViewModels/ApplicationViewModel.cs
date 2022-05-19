@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace Cryptocurrencies
 {
-    class ApplicationViewModel
+    public class ApplicationViewModel
     {
         private Asset cryptocurrency;
         
@@ -37,8 +37,19 @@ namespace Cryptocurrencies
             }
         }
 
+        private bool _isLoadData;
+
+        public bool IsLoadData
+        {
+            get { return _isLoadData; }
+            set { _isLoadData = value; }
+        }
+
+        public DelegateCommand GetButtonClicked { get; set; }
+
         public ApplicationViewModel()
         {
+            GetButtonClicked = new DelegateCommand(GetDetails);
             GetDetails();
             GetDetailsOne();
         }
@@ -49,6 +60,7 @@ namespace Cryptocurrencies
             if (Details.Result.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 Cryptocurrencies = Details.Result.Content.ReadAsAsync<Assets>().Result;
+                IsLoadData = true;
             }
         }
         private void GetDetailsOne()
@@ -57,6 +69,7 @@ namespace Cryptocurrencies
             if (Details.Result.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 Сryptocurrency = Details.Result.Content.ReadAsAsync<Asset>().Result;
+                IsLoadData = true;
             }
         }
     }

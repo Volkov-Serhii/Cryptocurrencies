@@ -1,0 +1,29 @@
+﻿<Page x:Class="Cryptocurrencies.DetailsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Cryptocurrencies"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="DetailsPage">
+
+    <Grid Background="White">
+        <StackPanel DataContext="{Binding SelectedСryptocurrency}" Margin="246,34,272,10">
+            <TextBlock FontSize="18" Text="ID" />
+            <TextBlock Text="{Binding Path=asset_id}" />
+            <TextBlock FontSize="18" Text="Name" />
+            <TextBlock Text="{Binding Path=name}" />
+            <TextBlock FontSize="18" Text="Price" />
+            <TextBlock Text="{Binding Path=price}" />
+            <TextBlock FontSize="18" Text="Volume_24h" />
+            <TextBlock Text="{Binding Path=volume_24h}" />
+            <TextBlock FontSize="18" Text="Change_1h" />
+            <TextBlock Text="{Binding Path=change_1h}" />
+            <TextBlock FontSize="18" Text="Change_24h" />
+            <TextBlock Text="{Binding Path=change_24h}" />
+            <TextBlock FontSize="18" Text="Change_7d" />
+            <TextBlock Text="{Binding Path=change_7d}" />
+        </StackPanel>
+    </Grid>
+</Page>

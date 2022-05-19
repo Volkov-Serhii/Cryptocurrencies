@@ -16,14 +16,14 @@ using System.Windows.Shapes;
 namespace Cryptocurrencies
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для DetailsPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class DetailsPage : Page
     {
-        public MainWindow()
+        public DetailsPage(ApplicationViewModel Data)
         {
             InitializeComponent();
-            MainFrame.Content = new MainPage();
+            DataContext = Data;
         }
     }
 }
