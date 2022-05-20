@@ -1,0 +1,25 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <Style TargetType="MenuItem">
+        <Setter Property="Background" Value="#1234"></Setter>
+    </Style>
+    <Style TargetType="Grid">
+        <Setter Property="Background" Value="#1234"></Setter>
+    </Style>
+    <Style TargetType="Frame">
+        <Setter Property="Background" Value="#1234"></Setter>
+    </Style>
+    <Style TargetType="WrapPanel">
+        <Setter Property="ItemWidth" Value="150"></Setter>
+        <Setter Property="MaxWidth" Value="150"></Setter>
+        <Setter Property="Background" Value="#1234"></Setter>
+        <Setter Property="ItemHeight" Value="30"></Setter>
+        <Setter Property="Margin" Value="3"></Setter>
+    </Style>
+    <Style TargetType="Window">
+        <Setter Property="Background" Value="White" />
+    </Style>
+    <Style TargetType="Menu">
+        <Setter Property="Background" Value="#1234"></Setter>
+    </Style>
+</ResourceDictionary>

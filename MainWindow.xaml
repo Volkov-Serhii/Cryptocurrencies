@@ -7,12 +7,19 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="Themes">
+                <MenuItem Header="Light" Click="Light_Click"/>
+                <MenuItem Header="Dark" Click="Dark_Click"/>
+            </MenuItem>
+            <MenuItem Header="Exit" Click="Exit_Click"/>
+        </Menu>
         <WrapPanel>
             <Label Content="Menu" HorizontalAlignment="Center"/>
             <Button Name="MainPage" Content="Main" Click="MainPage_Click"></Button>
             <Button Name="DetailsPage" Content="Details" Click="DetailsPage_Click"></Button>
             <Button Name="FindPage" Content="Find" Click="FindPage_Click"></Button>
         </WrapPanel>
-        <Frame Name="MainFrame" Background="White" NavigationUIVisibility="Hidden"/>
+        <Frame Name="MainFrame" Background="#1234" NavigationUIVisibility="Hidden"/>
     </DockPanel>
 </Window>

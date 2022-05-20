@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="DetailsPage">
 
-    <Grid Background="White">
+    <Grid>
         <StackPanel DataContext="{Binding SelectedСryptocurrency}" Margin="158,34,166,10">
             <TextBlock FontSize="18" Text="ID" />
             <TextBlock Text="{Binding Path=asset_id}" />

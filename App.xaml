@@ -11,5 +11,11 @@
             <Setter Property="ItemHeight" Value="30"></Setter>
             <Setter Property="Margin" Value="3"></Setter>
         </Style>
+        <Style TargetType="Menu">
+            <Setter Property="Background" Value="#1234"></Setter>
+        </Style>
+        <Style TargetType="MenuItem">
+            <Setter Property="Background" Value="#1234"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

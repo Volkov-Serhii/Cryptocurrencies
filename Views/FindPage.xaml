@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="FindPage">
 
-    <Grid Background="White">
+    <Grid>
         <StackPanel>
             <TextBlock Text="Find by ID"  />
             <TextBox Name="find"/>
@@ -17,7 +17,7 @@
                     CommandParameter="{Binding Text, ElementName=find}"
                     Click="Find_Click"></Button>
         </StackPanel>
-        <StackPanel DataContext="{Binding Сryptocurrency.asset}" Margin="150,112,203,10">
+        <StackPanel DataContext="{Binding Сryptocurrency.asset}" Margin="150,72,203,67">
             <TextBlock FontSize="18" Text="ID" />
             <TextBlock Text="{Binding Path=asset_id}"/>
             <TextBlock FontSize="18" Text="Name" />

@@ -16,9 +16,6 @@ using System.Windows.Shapes;
 
 namespace Cryptocurrencies
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
         public MainWindow()
@@ -41,6 +38,27 @@ namespace Cryptocurrencies
         private void DetailsPage_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.NavigationService.Navigate(new DetailsPage((ApplicationViewModel)DataContext));
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void Light_Click(object sender, RoutedEventArgs e)
+        {
+            var uri = new Uri("light.xaml", UriKind.Relative);
+            ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resourceDict);
+        }
+
+        private void Dark_Click(object sender, RoutedEventArgs e)
+        {
+            var uri = new Uri("dark.xaml", UriKind.Relative);
+            ResourceDictionary resourceDict = Application.LoadComponent(uri) as ResourceDictionary;
+            Application.Current.Resources.Clear();
+            Application.Current.Resources.MergedDictionaries.Add(resourceDict);
         }
     }
 }
