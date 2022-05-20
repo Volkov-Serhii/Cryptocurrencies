@@ -1,5 +1,4 @@
-﻿using Cryptocurrencies.Views;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -14,15 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Cryptocurrencies
+namespace Cryptocurrencies.Views
 {
-    public partial class MainPage : Page
+    public partial class FindPage : Page
     {
-        
-        public MainPage(ApplicationViewModel Data)
+        public FindPage(ApplicationViewModel DATA)
         {
             InitializeComponent();
-            DataContext = Data;
+            DataContext = DATA;
+        }
+
+        private void Find_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new FindPage((ApplicationViewModel)DataContext));
         }
     }
 }

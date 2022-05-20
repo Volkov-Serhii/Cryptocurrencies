@@ -13,9 +13,8 @@
             <ColumnDefinition />
             <ColumnDefinition Width="0*" />
         </Grid.ColumnDefinitions>
-
         <ListBox Grid.Column="0" ItemsSource="{Binding Cryptocurrencies.assets}"
-                 SelectedItem="{Binding SelectedСryptocurrency}" Margin="0,68,0,0" >
+                 SelectedItem="{Binding SelectedСryptocurrency}" >
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Margin="5">
@@ -26,6 +25,5 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <Button Name="Batton1" Content="Details" Click="Batton1_Click" Margin="0,0,517,348"></Button>
     </Grid>
 </Page>

@@ -6,6 +6,13 @@
         xmlns:local="clr-namespace:Cryptocurrencies"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Frame Name="MainFrame" Background="White" NavigationUIVisibility="Hidden"/>
-    
+    <DockPanel>
+        <WrapPanel>
+            <Label Content="Menu" HorizontalAlignment="Center"/>
+            <Button Name="MainPage" Content="Main" Click="MainPage_Click"></Button>
+            <Button Name="DetailsPage" Content="Details" Click="DetailsPage_Click"></Button>
+            <Button Name="FindPage" Content="Find" Click="FindPage_Click"></Button>
+        </WrapPanel>
+        <Frame Name="MainFrame" Background="White" NavigationUIVisibility="Hidden"/>
+    </DockPanel>
 </Window>

@@ -37,21 +37,12 @@ namespace Cryptocurrencies
             }
         }
 
-        private bool _isLoadData;
-
-        public bool IsLoadData
-        {
-            get { return _isLoadData; }
-            set { _isLoadData = value; }
-        }
-
-        public DelegateCommand GetButtonClicked { get; set; }
+        public DelegateCommand<string> GetButtonClicked { get; set; }
 
         public ApplicationViewModel()
         {
-            GetButtonClicked = new DelegateCommand(GetDetails);
+            GetButtonClicked = new DelegateCommand<string>(GetDetailsOne);
             GetDetails();
-            GetDetailsOne();
         }
         
         private void GetDetails()
@@ -60,16 +51,14 @@ namespace Cryptocurrencies
             if (Details.Result.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 Cryptocurrencies = Details.Result.Content.ReadAsAsync<Assets>().Result;
-                IsLoadData = true;
             }
         }
-        private void GetDetailsOne()
+        private void GetDetailsOne(string ID)
         {
-            var Details = API.GetCall("assets/BTC");
+            var Details = API.GetCall("assets/" + ID);
             if (Details.Result.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 Сryptocurrency = Details.Result.Content.ReadAsAsync<Asset>().Result;
-                IsLoadData = true;
             }
         }
     }

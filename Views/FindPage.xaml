@@ -1,17 +1,25 @@
-﻿<Page x:Class="Cryptocurrencies.DetailsPage"
+﻿<Page x:Class="Cryptocurrencies.Views.FindPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:Cryptocurrencies"
+      xmlns:local="clr-namespace:Cryptocurrencies.Views"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="DetailsPage">
+      Title="FindPage">
 
     <Grid Background="White">
-        <StackPanel DataContext="{Binding SelectedСryptocurrency}" Margin="158,34,166,10">
+        <StackPanel>
+            <TextBlock Text="Find by ID"  />
+            <TextBox Name="find"/>
+            <Button Name="Find" Content="Find" 
+                    Command="{Binding GetButtonClicked}"
+                    CommandParameter="{Binding Text, ElementName=find}"
+                    Click="Find_Click"></Button>
+        </StackPanel>
+        <StackPanel DataContext="{Binding Сryptocurrency.asset}" Margin="150,112,203,10">
             <TextBlock FontSize="18" Text="ID" />
-            <TextBlock Text="{Binding Path=asset_id}" />
+            <TextBlock Text="{Binding Path=asset_id}"/>
             <TextBlock FontSize="18" Text="Name" />
             <TextBlock Text="{Binding Path=name}" />
             <TextBlock FontSize="18" Text="Price" />

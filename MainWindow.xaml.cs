@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Cryptocurrencies.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,7 +24,23 @@ namespace Cryptocurrencies
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Content = new MainPage();
+            DataContext = new ApplicationViewModel();
+            MainFrame.Content = new MainPage((ApplicationViewModel)DataContext);
+        }
+
+        private void MainPage_Click(object sender, RoutedEventArgs e)
+        {
+           MainFrame.NavigationService.Navigate(new MainPage((ApplicationViewModel)DataContext));
+        }
+
+        private void FindPage_Click(object sender, RoutedEventArgs e)
+        {
+           MainFrame.NavigationService.Navigate(new FindPage((ApplicationViewModel)DataContext));
+        }
+
+        private void DetailsPage_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.NavigationService.Navigate(new DetailsPage((ApplicationViewModel)DataContext));
         }
     }
 }

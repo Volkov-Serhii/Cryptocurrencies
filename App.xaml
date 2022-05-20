@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:Cryptocurrencies"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <Style TargetType="WrapPanel">
+            <Setter Property="ItemWidth" Value="150"></Setter>
+            <Setter Property="MaxWidth" Value="150"></Setter>
+            <Setter Property="Background" Value="#1234"></Setter>
+            <Setter Property="ItemHeight" Value="30"></Setter>
+            <Setter Property="Margin" Value="3"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

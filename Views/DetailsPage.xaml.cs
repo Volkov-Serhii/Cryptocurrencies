@@ -15,9 +15,6 @@ using System.Windows.Shapes;
 
 namespace Cryptocurrencies
 {
-    /// <summary>
-    /// Логика взаимодействия для DetailsPage.xaml
-    /// </summary>
     public partial class DetailsPage : Page
     {
         public DetailsPage(ApplicationViewModel Data)
